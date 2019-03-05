@@ -34,12 +34,34 @@ var request = function(filename){
 }
 
 var initResume = function(){
-	var ed_item_1="../JSON/education.JSON";
-	var p1 = request(ed_item_1);
+	var education="../JSON/education.JSON";
+	var p1 = request(education);
 	p1.then(results=>{
 		console.log(results);
 		document.getElementById("ed_title").innerHTML += results[0].title;
-		document.getElementById("ed_item1").innerHTML += results[0][1];
-		
+		document.getElementById("ed_gpa").innerHTML += results[0].gpa;
+		document.getElementById("ed_honors").innerHTML += results[0].honors;
+		document.getElementById("ed_graduation").innerHTML += results[0].graduation;
+		document.getElementById("ed_date").innerHTML += results[0].date_begin;
 	});
+
+	var experience="../JSON/experience.JSON";
+	var p2 = request(experience);
+	p2.then(results=>{
+		console.log(results);
+		document.getElementById("ex_title").innerHTML += results[0].title;
+		document.getElementById("ex_item1").innerHTML += results[0].item1;
+		document.getElementById("ex_item2").innerHTML += results[0].item2;
+		document.getElementById("ex_item3").innerHTML += results[0].item3;
+		document.getElementById("ex_item4").innerHTML += results[0].item4;
+		document.getElementById("ex_date").innerHTML += results[0].date_begin;
+
+		document.getElementById("ex2_title").innerHTML += results[1].title;
+		document.getElementById("ex2_item1").innerHTML += results[1].item1;
+		document.getElementById("ex2_item2").innerHTML += results[1].item2;
+		document.getElementById("ex2_item3").innerHTML += results[1].item3;
+		document.getElementById("ex2_item4").innerHTML += results[1].item4;
+		document.getElementById("ex2_date").innerHTML += results[0].date_begin;
+	});
+		
 }

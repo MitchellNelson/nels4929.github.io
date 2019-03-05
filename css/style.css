@@ -78,3 +78,15 @@ li{
 	border-left: solid 1px #44484f;
 }
 
+.resume table{
+	margin: 20%;
+	margin-top:2rem;
+	margin-bottom: 2rem;
+	border-bottom:solid 1px #44484f;
+	witdh:100%;
+}
+.resume table td p{
+	margin-right: 2rem;
+	witdh:100%;
+}
+
