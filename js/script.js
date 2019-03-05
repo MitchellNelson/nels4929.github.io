@@ -65,3 +65,30 @@ var initResume = function(){
 	});
 		
 }
+
+var initProjects = function(){
+	var projects="../JSON/projects.JSON";
+	var p1 = request(projects);
+	p1.then(results=>{
+		console.log(results);
+		document.getElementById("project1_title").innerHTML += results[0].title;
+		document.getElementById("project1_date").innerHTML += results[0].date;
+		document.getElementById("project1_description").innerHTML += results[0].description;
+		document.getElementById("project1_image").src = results[0].image;
+
+		document.getElementById("project2_title").innerHTML += results[1].title;
+		document.getElementById("project2_date").innerHTML += results[1].date;
+		document.getElementById("project2_description").innerHTML += results[1].description;
+		document.getElementById("project2_image").src = results[1].image;
+
+		document.getElementById("project3_title").innerHTML += results[2].title;
+		document.getElementById("project3_date").innerHTML += results[2].date;
+		document.getElementById("project3_description").innerHTML += results[2].description;
+		document.getElementById("project3_image").src = results[2].image;
+
+		document.getElementById("project4_title").innerHTML += results[3].title;
+		document.getElementById("project4_date").innerHTML += results[3].date;
+		document.getElementById("project4_description").innerHTML += results[3].description;
+		document.getElementById("project4_image").src = results[3].image;
+	});	
+}
