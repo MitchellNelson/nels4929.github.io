@@ -9,17 +9,31 @@
 </head>
 <body onload="init()">
 	<div class ="header">
-		<ul>
+		
+		<ul class="center_header">
 			<li><a href="html/projects.html"><span>Projects</span></a></li>
 			<li><a href="index.html"><span id="name">Mitchell Nelson</span></a></li>
 			<li><a href="html/resume.html"><span>Resume</span></a></li>
 		</ul>
+		
+			<div class="dropdown">
+			  <button class="dropbtn">Translate</button>
+			  <div class="dropdown-content">
+			  <button onclick="translate_text('af')">Afrikaans</button>
+			  <button onclick="translate_text('sq')">Albanian</button>
+			  <button onclick="translate_text('am')">Amharic</button>
+			  <button onclick="translate_text('af')">Afrikaans</button>
+			  <button onclick="translate_text('sq')">Albanian</button>
+			  <button onclick="translate_text('am')">Amharic</button>
+			  </div>
+			</div>
+		
 	</div>
 	<div class="intro">
 		<img src="images/profile.jpg">
-		<p>I am a Computer Science Student that found a passion for problem solving. I have gained experience with front end development through an internship, and I am learning various other Computer Science skills through my education at St. Thomas. I am currently assisting with research involving GPU utilization for compressed bitmap queries. I thrive off of organization, communication, and troubleshooting. I enjoy playing drumset and producing music for a variety of different music generes</p>
+		<p id = "intro_p">I am a Computer Science Student that found a passion for problem solving. I have gained experience with front end development through an internship, and I am learning various other Computer Science skills through my education at St. Thomas. I am currently assisting with research involving GPU utilization for compressed bitmap queries. I thrive off of organization, communication, and troubleshooting. I enjoy playing drumset and producing music for a variety of different music generes</p>
 	</div>
-	<div class="news">	
+	<div class="boxes">	
 		<h2>News Updates:</h2>
 		<center><table>
 			<tr>
