@@ -50,10 +50,12 @@ li{
 	font-size: 2.5rem;
 	border: solid 2px #3fb0ac;
 	padding:.6rem;
+	
 }
 
 #name:hover{
 	border: solid 2px #173e43;
+
 }
 
 .intro{
