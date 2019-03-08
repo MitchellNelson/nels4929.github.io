@@ -22,14 +22,13 @@ li{
 	padding:1.5rem;
 	padding-bottom: 1rem;
 	padding-top: 1rem;
-
 }
 
 .header{
 	font-size: 1.5rem;
 	color:white;
 	background-color:#44484f;
-
+	width: 100%;
 }
 
 .header a:link{
@@ -118,7 +117,6 @@ li{
 .dropdown {
   position: relative;
   display: block;
-
 }
 
 .dropdown-content {
@@ -157,3 +155,25 @@ li{
   margin: 0;
   padding:1rem;
 }
+
+@media only screen and (max-width: 1000px){
+	li{
+		padding:.2rem;
+		font-size: 1rem;
+	}
+	.dropbtn {
+	  font-size: 1rem;
+	}
+	#name{
+		font-size: 1rem;
+		border: solid 2px #3fb0ac;
+		padding:.6rem;
+	}
+}
+
+@media only screen and (max-width: 700px){
+	ul{
+		margin:0%;
+	}
+}
+
