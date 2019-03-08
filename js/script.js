@@ -23,27 +23,9 @@ var initTranslate = function(){
 	['Georgian',	'ka'],['Swahili',	'sw'],['Gujarati',	'gu'],	['Sundanese',	'su'],['Danish',	'da'],	['Tajik',	'tg'],['Hebrew',	'he'],	['Thai',	'th'],['Yiddish',	'yi'],	
 	['Tagalog',	'tl'],['Indonesian',	'id'],	['Tamil',	'ta'],['Irish',	'ga'],	['Tatar',	'tt'],['Italian',	'it'],	['Telugu',	'te'],['Icelandic',	'is'],	['Turkish',	'tr'],
 	['Spanish',	'es'],	['Udmurt',	'udm'],['Kazakh',	'kk'],	['Uzbek',	'uz'],['Kannada',	'kn'],	['Ukrainian',	'uk'],['Catalan',	'ca'],	['Urdu',	'ur'],['Kyrgyz',	'ky'],	
-	['Finnish',	'fi'],['Chinese',	'zh'],	
-	['French',	'fr'],
-	['Korean',	'ko'],	
-	['Hindi',	'hi'],
-	['Xhosa',	'xh'],	
-	['Croatian'	,'hr'],
-	['Khmer'	,'km'],	
-	['Czech'	,'cs'],
-	['Laotian',	'lo'],	
-	['Swedish',	'sv'],
-	['Latin',	'la'],	
-	['Scottish',	'gd'],
-	['Latvian'	,'lv'],	
-	['Estonian'	,'et'],
-	['Lithuanian',	'lt'],	
-	['Esperanto',	'eo'],
-	['Luxembourgish',	'lb'],	
-	['Javanese',	'jv'],
-	['Malagasy',	'mg'],	
-	['Japanese',	'ja'],
-	['Malay','ms']];
+	['Finnish',	'fi'],['Chinese',	'zh'],	['French',	'fr'],['Korean',	'ko'],	['Hindi',	'hi'],['Xhosa',	'xh'],	['Croatian'	,'hr'],['Khmer'	,'km'],	['Czech'	,'cs'],
+	['Laotian',	'lo'],	['Swedish',	'sv'],['Latin',	'la'],	['Scottish',	'gd'],['Latvian'	,'lv'],	['Estonian'	,'et'],['Lithuanian',	'lt'],	['Esperanto',	'eo'],['Luxembourgish',	'lb'],	
+	['Javanese',	'jv'],['Malagasy',	'mg'],	['Japanese',	'ja'],['Malay','ms']];
 
 	langs.forEach(function(element) {
   		var btn = document.createElement("button");
@@ -116,26 +98,33 @@ var education="../JSON/education.JSON";
 			var date_t = document.createTextNode(results[i].date_begin);
 			date_para.appendChild(date_t);
 
-
-
 			//TITLE
 			var title_h3 = document.createElement("h4");
 			var title_t = document.createTextNode(results[i].title);
 			title_h3.appendChild(title_t);
 
 			//DESCRIPTION
-			var description_para = document.createElement("p");
-			var description_t = document.createTextNode(results[i].item1);
-			description_para.appendChild(description_t);
+			var gpa_para = document.createElement("p");
+			var gpa_t = document.createTextNode(results[i].gpa);
+			gpa_para.appendChild(gpa_t);
 
-			
+			var honors_para = document.createElement("p");
+			var honors_t = document.createTextNode(results[i].honors);
+			honors_para.appendChild(honors_t);
+
+			var grad_para = document.createElement("p");
+			var grad_t = document.createTextNode(results[i].graduation);
+			grad_para.appendChild(grad_t);
+
 			var tr = document.createElement("tr");//creates new row
 			
 			
 			var td= document.createElement("td");//creates new column
 			td.appendChild(title_h3);
 			td.appendChild(date_para);
-			td.appendChild(description_para);
+			td.appendChild(gpa_para);
+			td.appendChild(honors_para);
+			td.appendChild(grad_para);
 
 			var date_td= document.createElement("td");//creates new column
 			date_td.appendChild(date_para);
@@ -146,7 +135,7 @@ var education="../JSON/education.JSON";
 			document.getElementById("education_table").appendChild(tr);
 			
 		}
-		
+		initTranslate();
 	});	
 	var experience="../JSON/experience.JSON";
 	var p1 = request(experience);
@@ -258,8 +247,7 @@ var initProjects = function(){
 			 });
 			});
 	});	
-
-
+	initTranslate();
 }
 
 var showImg=function(thumbnail) {

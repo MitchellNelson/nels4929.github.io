@@ -5,28 +5,25 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="shortcut icon" href="images/shortcut.jpg"/>
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body onload="init()">
 	<div class ="header">
 		
 		<ul class="center_header">
-			<li><a href="html/projects.html"><span>Projects</span></a></li>
 			<li><a href="index.html"><span id="name">Mitchell Nelson</span></a></li>
-			<li><a href="html/resume.html"><span>Resume</span></a></li>
+			<li style="float:right"><a href="html/projects.html"><span>Projects</span></a></li>
+			<li style="float:right"><a href="html/resume.html"><span>Resume</span></a></li>
+			<li style="float:right"><div class="dropdown">
+			  <button class="dropbtn"><span>Translate</span></button>
+			  <div class="dropdown-content">
+			  </div>
+			</div></li>
+
 		</ul>
 		
-			<div class="dropdown">
-			  <button class="dropbtn">Translate</button>
-			  <div class="dropdown-content">
-			  <button onclick="translate_text('af')">Afrikaans</button>
-			  <button onclick="translate_text('sq')">Albanian</button>
-			  <button onclick="translate_text('am')">Amharic</button>
-			  <button onclick="translate_text('af')">Afrikaans</button>
-			  <button onclick="translate_text('sq')">Albanian</button>
-			  <button onclick="translate_text('am')">Amharic</button>
-			  </div>
-			</div>
+			
 		
 	</div>
 	<div class="intro">
@@ -49,6 +46,9 @@
 				</td>
 			</tr>
 		</table></center>	
+	</div>
+	<div class="myFooter">
+  		<p>Footer</p>
 	</div>
 </body>
 </html>
