@@ -22,6 +22,7 @@ li{
 	padding:1.5rem;
 	padding-bottom: 1rem;
 	padding-top: 1rem;
+
 }
 
 .header{
@@ -32,14 +33,14 @@ li{
 }
 
 .header a:link{
+	color:white;
 	text-decoration: none;
+	font-weight: lighter;
 }
 .header a:visited{
 	color:white;
 }
-.header a:link{
-	color:white;
-}
+
 
 .header a:hover, .header button:hover{
 	color:#fae596;
@@ -110,11 +111,14 @@ li{
   color: white;
   border: none;
   font-size: 1.5rem;
+  font-weight: lighter;
+  font-family: Gotham SSm A,Gotham SSm B,Gotham Rounded SSm A,Gotham Rounded SSm B,sans-serif;
 }
 
 .dropdown {
   position: relative;
   display: block;
+
 }
 
 .dropdown-content {
