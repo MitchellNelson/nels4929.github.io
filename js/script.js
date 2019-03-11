@@ -12,6 +12,7 @@ var init = function(){
 	});
 	//document.getElementById("translate").onclick = function() {translate()};
 	initTranslate();
+	
 }
 
 var initTranslate = function(){
@@ -34,21 +35,35 @@ var initTranslate = function(){
 
   		//call translate when clicked with appropriate lang code
   		btn.addEventListener('click', function() {
-			translate_text(element[1]);
+			getAll(element[1], document.body);
 		});
   		document.getElementsByClassName("dropdown-content")[0].appendChild(btn);
 	});
+	
 }
 	
-var translate_text = function(lang){
+	//recursively go through all content from body 
+function getAll (lang, element) {
+    for (var i = 0; i < element.childNodes.length; i++) {
+      var child = element.childNodes[i];
+      getAll(lang, child);
+      //if child is at the bottom 
+    	if(child.children != undefined && !child.children.length > 0){
+	      	console.log(child.innerHTML);
+	      	if(!child.innerHTML==""){
+	      		translate_text(lang, child)
+	      	}
+    	} 
+    }
+}
+
+var translate_text = function(lang, element){
 	var body = document.getElementsByTagName('body');
 	for(var i = 0; i<body[0].childNodes.length; i++){
 		console.log(body[0].childNodes[i]);
-
 	}
 
-
-	var text = document.getElementById("intro_p").innerHTML;
+	var text = element.innerHTML;
 	console.log(text);
 	 var address2 = "https://translate.yandex.net/api/v1.5/tr.json/getLangs";
 	 address2 += "?key=trnsl.1.1.20190307T013627Z.6d9185c2da4f0c66.d25b4224007eb3e063e2316975cd030d29b967e1";
@@ -62,7 +77,7 @@ var translate_text = function(lang){
 	var p1 = request(address);
 	p1.then(results=>{
 		console.log(results);
-		document.getElementById("intro_p").innerHTML = results.text[0];
+		element.innerHTML = results.text[0];
 	});
 }
 
@@ -93,10 +108,15 @@ var education="../JSON/education.JSON";
 	p1.then(results=>{
 		console.log(results);
 		for(var i =0; i<results.length; i++){
-			//DATE
+			//begin date
 			var date_para = document.createElement("p");
 			var date_t = document.createTextNode(results[i].date_begin);
 			date_para.appendChild(date_t);
+
+			//end date
+			var edate_para = document.createElement("p");
+			var edate_t = document.createTextNode(results[i].date_end);
+			edate_para.appendChild(edate_t);
 
 			//TITLE
 			var title_h3 = document.createElement("h4");
@@ -122,12 +142,15 @@ var education="../JSON/education.JSON";
 			var td= document.createElement("td");//creates new column
 			td.appendChild(title_h3);
 			td.appendChild(date_para);
+			td.appendChild(edate_para);
 			td.appendChild(gpa_para);
 			td.appendChild(honors_para);
 			td.appendChild(grad_para);
 
-			var date_td= document.createElement("td");//creates new column
+			var date_td= document.createElement("td");//creates new date column
+			date_td.className="dates";
 			date_td.appendChild(date_para);
+			date_td.appendChild(edate_para);
 
 			tr.appendChild(date_td);
 			tr.appendChild(td);
@@ -142,12 +165,15 @@ var education="../JSON/education.JSON";
 	p1.then(results=>{
 		console.log(results);
 		for(var i =0; i<results.length; i++){
-			//DATE
+			//begin date
 			var date_para = document.createElement("p");
 			var date_t = document.createTextNode(results[i].date_begin);
 			date_para.appendChild(date_t);
 
-
+			//end date
+			var edate_para = document.createElement("p");
+			var edate_t = document.createTextNode(results[i].date_end);
+			edate_para.appendChild(edate_t);
 
 			//TITLE
 			var title_h3 = document.createElement("h4");
@@ -176,13 +202,16 @@ var education="../JSON/education.JSON";
 			var td= document.createElement("td");//creates new column
 			td.appendChild(title_h3);
 			td.appendChild(date_para);
+			td.appendChild(edate_para);
 			td.appendChild(item1_para);
 			td.appendChild(item2_para);
 			td.appendChild(item3_para);
 			td.appendChild(item4_para);
 
 			var date_td= document.createElement("td");//creates new column
+			date_td.className="dates";
 			date_td.appendChild(date_para);
+			date_td.appendChild(edate_para);
 
 			tr.appendChild(date_td);
 			tr.appendChild(td);
@@ -215,10 +244,6 @@ var initProjects = function(){
 			var thumbnail = new Image();
 			thumbnail.src = results[i].thumbnail;
 			thumbnail.className="thumbnail";
-			
-			//IMG
-			var image = new Image();
-			image.className = "pop_img";
 
 			//DESCRIPTION
 			var description_para = document.createElement("p");
@@ -233,23 +258,58 @@ var initProjects = function(){
 			td.appendChild(title_h3);
 			td.appendChild(date_para);
 			td.appendChild(thumbnail);
-			td.appendChild(image);
 			td.appendChild(description_para);
 
 			tr.appendChild(td);
-			document.getElementById("project_table").appendChild(tr);
+			document.getElementById("project_table").appendChild(tr);	
 		}
-			var allThumbs = document.querySelectorAll(".thumbnail");
-			console.log(allThumbs.length);
-			allThumbs.forEach(function(img, index) {
-			  img.addEventListener('click', function() {
-			    showImg(index);
-			 });
-			});
+
+		//ADD ALL FULL SIZED IMAGES TO A SEPERATE DIV
+		var img_div= document.createElement("div");
+		img_div.id="img_background";
+		var close = document.createElement("p");
+
+		close.addEventListener( 'click', function(){
+			for(var j = 0; j<document.getElementsByClassName("pop_img").length; j++){
+				console.log(document.getElementsByClassName("pop_img")[j]);
+				document.getElementsByClassName("pop_img")[j].style.display="none";
+				
+			}
+			document.getElementById("img_background").style.display="none";
+		});
+
+		close.id="close";
+		close_t =document.createTextNode("x");
+		close.appendChild(close_t);
+
+		img_div.appendChild(close);
+		for(var i =0; i<results.length; i++){
+			var image = new Image();
+			image.src = results[i].image;
+			image.id = "img"+i;
+			image.className = "pop_img";
+			img_div.appendChild(image);
+			document.getElementById("project_table").appendChild(img_div);
+		}
+
+		//loop through thumbnails and add event listeners to each
+		var allThumbs = document.querySelectorAll(".thumbnail");
+		console.log(allThumbs.length);
+		allThumbs.forEach(function(img,index) {
+		  img.addEventListener('click', function() {
+		    showImg(index);
+		 });
+		});
 	});	
 	initTranslate();
 }
 
-var showImg=function(thumbnail) {
-	console.log(thumbnail);
+var showImg=function(index) {
+	var id = "img"+index;
+	console.log(id);
+	document.getElementById("img_background").style.display="block";
+	document.getElementById(id).style.display="block";
 }
+
+
+
