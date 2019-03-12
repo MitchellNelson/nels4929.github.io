@@ -8,10 +8,8 @@ body{
 	font-family: Gotham SSm A,Gotham SSm B,Gotham Rounded SSm A,Gotham Rounded SSm B,sans-serif;
 	font-weight: lighter;
 	color:#3b3d42;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
-
-
 
 ul{
 	margin:10%;
@@ -20,18 +18,19 @@ ul{
 }
 
 li{
-
 	display: inline-block;
-	padding:1.5rem;
+	padding:1rem;
 	padding-bottom: 1rem;
 	padding-top: 1rem;
 }
 
 .header{
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	color:white;
 	background-color:#44484f;
 	width: 100%;
+	vertical-align: middle;
+	position: sticky;
 }
 
 .header a:link{
@@ -43,9 +42,7 @@ li{
 	color:white;
 }
 
-
 .header a:hover, .header button:hover{
-
 	color:#fae596;
 	cursor: pointer;
 	  -ms-transition:.5s;
@@ -56,7 +53,7 @@ li{
 }
 
 #name{
-	font-size: 2.5rem;
+	font-size: 2rem;
 	border: solid 2px #3fb0ac;
 	border-top: none;
 	border-bottom: none;
@@ -78,10 +75,10 @@ li{
 }
 
 .intro{
-  margin:10%;
+  margin:15%;
   margin-bottom: 0;
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .intro img{
@@ -93,10 +90,11 @@ li{
 }
 
 .boxes {
-	margin:10%;
+	margin:15%;
 	margin-top:1rem;
 	margin-bottom: 1rem;
 }
+
 .boxes h3{
 	text-align: center;
 	font-size: 1.5rem;
@@ -108,7 +106,7 @@ li{
 }
 
 .boxes td,tr{
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
 .boxes table tr td{
@@ -124,9 +122,11 @@ li{
 	float:right;
 	padding: 0;	
 }
+
 .resume table tr .dates{
 	width: 7rem;
 }
+
 .description{
 	height: 100%;
 }
@@ -140,7 +140,6 @@ li{
   -webkit-transition:.5s;
   /* ...and now for the proper property */
   transition:.5s;
-
 }
 
 .boxes table tr td img{
@@ -149,11 +148,10 @@ li{
 }
 
 .resume table{
-	margin: 10%;
-	margin-top:2rem;
+	margin: 15%;
+	margin-top:0rem;
 	margin-bottom: 2rem;
 	border-bottom:solid 1px #44484f;
-	
 	witdh:100%;
 }
 
@@ -164,11 +162,19 @@ li{
 	margin: .6rem;
 }
 
+.resume a:link{
+	text-decoration: none;
+	color:#3b3d42;;
+}
+.resume a:visited{
+	color:#3b3d42;;
+}
+
 .dropbtn {
   background-color:#44484f;
   color: white;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: lighter;
   font-family: Gotham SSm A,Gotham SSm B,Gotham Rounded SSm A,Gotham Rounded SSm B,sans-serif;
 }
@@ -228,7 +234,6 @@ position: fixed;
   bottom: 20%;
   background-color: white;
   z-index: 3;
-  font-size: 2em;
   padding: 0;
 }
 
@@ -256,54 +261,55 @@ position: fixed;
   color: #fae596;
   text-align: center;
   margin: 0;
-  padding:1rem;
+  padding:.5rem;
+
 }
 
 .myFooter a:link{
 	color:#fae596;
-	
 	font-weight: lighter;
 }
 .myFooter a:visited{
 	color:#fae596;
 }
 
-@media only screen and (max-width: 1100px){
+@media only screen and (max-width: 900px){
 	li{
 		padding:.2rem;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		padding-bottom: 1rem;
 		padding-top: 1rem;
 	}
 	.dropbtn {
-		font-size: 1rem;
-	}
-	.dropbtn {
-	  font-size: 1rem;
+		font-size: 1.2rem;
 	}
 	#name{
-		font-size: 1rem;
+		font-size: 1.2rem;
 		border-left: solid 2px #3fb0ac;
 		padding:.6rem;
 	}
 	td {
   		display: table-row;
 	}
+	.boxes table {
+  	
+  	border-spacing: 1rem 0rem;
+	}
 	.intro{
-	  margin:1%;
+	  margin:5%;
 	  margin-bottom: 0;
 	  margin-top: 1rem;
 	}
 	.boxes {
-		margin:1%;
+		margin:5%;
 		margin-top:1rem;
 		margin-bottom: 1rem;
 	}
 	.resume table{
-		margin: 1%;
+		margin: 5%;
 		margin-top:2rem;
 		margin-bottom: 2rem;
-		width: 98%;
+		width: 90%;
 	}
 	.resume table td p{
 		witdh:100%;

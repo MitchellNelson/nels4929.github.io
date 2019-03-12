@@ -146,8 +146,15 @@ var education="../JSON/education.JSON";
 
 			//TITLE
 			var title_h3 = document.createElement("h4");
+			var title_a = document.createElement("a");
+			title_a.href=results[i].title_link;
+			title_a.target="_blank";
+
+			console.log(title_a);
 			var title_t = document.createTextNode(results[i].title);
-			title_h3.appendChild(title_t);
+			title_h3.appendChild(title_a);
+			title_a.appendChild(title_t);
+
 
 			//DESCRIPTION
 			var gpa_para = document.createElement("p");
@@ -274,7 +281,7 @@ var initProjects = function(){
 			description_para.appendChild(description_t);
 
 
-			if(i%3==0){//makes a new row every other iteration
+			if(i%2==0){//makes a new row every other iteration
 				var tr = document.createElement("tr");//creates new row
 			}
 			
