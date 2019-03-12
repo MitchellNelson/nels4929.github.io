@@ -11,7 +11,14 @@ body{
 	font-size: 1.2rem;
 }
 
+table {
+  border-collapse: separate;
+  border-spacing: 2rem 2rem;
+}
 
+td,tr{
+  padding: 1rem;
+}
 
 ul{
 	margin:10%;
@@ -102,30 +109,18 @@ li{
 	font-size: 1.5rem;
 }
 
-.boxes table {
-  border-collapse: separate;
-  border-spacing: 2rem 2rem;
-}
-
-.boxes td,tr{
-  padding: 1rem;
-}
-
 .boxes table tr td{
 	width:30%;
 	padding:0rem 1rem 0rem 1rem;
 	top:0px;
-	border-left: solid 1px #3fb0ac;
-	box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.2);
+	border-left: solid 2px #3fb0ac;
+	box-shadow: 0px 4px 10px 3px rgba(0,0,0,0.2);
 	vertical-align: top;
 }
 
 .dates{
 	float:right;
 	padding: 0;	
-}
-.resume table tr .dates{
-	width: 7rem;
 }
 .description{
 	height: 100%;
