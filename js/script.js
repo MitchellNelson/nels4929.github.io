@@ -230,15 +230,16 @@ var initProjects = function(){
 	p1.then(results=>{
 		console.log(results);
 		for(var i =0; i<results.length; i++){
+			//DATE
+			var date_para = document.createElement("p");
+			var date_t = document.createTextNode(results[i].date);
+			date_para.className="dates";
+			date_para.appendChild(date_t);
+
 			//TITLE
 			var title_h3 = document.createElement("h4");
 			var title_t = document.createTextNode(results[i].title);
 			title_h3.appendChild(title_t);
-
-			//DATE
-			var date_para = document.createElement("p");
-			var date_t = document.createTextNode(results[i].date);
-			date_para.appendChild(date_t);
 
 			//Thumbnail
 			var thumbnail = new Image();
@@ -248,15 +249,17 @@ var initProjects = function(){
 			//DESCRIPTION
 			var description_para = document.createElement("p");
 			var description_t = document.createTextNode(results[i].description);
+			description_para.className="description";
 			description_para.appendChild(description_t);
 
-			if(i%2==0){//makes a new row every other iteration
+
+			if(i%3==0){//makes a new row every other iteration
 				var tr = document.createElement("tr");//creates new row
 			}
 			
 			var td= document.createElement("td");//creates new column
-			td.appendChild(title_h3);
 			td.appendChild(date_para);
+			td.appendChild(title_h3);
 			td.appendChild(thumbnail);
 			td.appendChild(description_para);
 
@@ -267,13 +270,23 @@ var initProjects = function(){
 		//ADD ALL FULL SIZED IMAGES TO A SEPERATE DIV
 		var img_div= document.createElement("div");
 		img_div.id="img_background";
-		var close = document.createElement("p");
-
-		close.addEventListener( 'click', function(){
+		//BACKGROUND FUNCTIONALITY FOR CLOSING POP UP
+		img_div.addEventListener( 'click', function(){
+			//LOOP THROUGH ALL POP_IMG AND CHANGE DISPLAY TO NONE
 			for(var j = 0; j<document.getElementsByClassName("pop_img").length; j++){
 				console.log(document.getElementsByClassName("pop_img")[j]);
 				document.getElementsByClassName("pop_img")[j].style.display="none";
-				
+			}
+			document.getElementById("img_background").style.display="none";
+		});
+
+		var close = document.createElement("p");
+		//X FUNCTIONALITY
+		close.addEventListener( 'click', function(){
+			//LOOP THROUGH ALL POP_IMG AND CHANGE DISPLAY TO NONE
+			for(var j = 0; j<document.getElementsByClassName("pop_img").length; j++){
+				console.log(document.getElementsByClassName("pop_img")[j]);
+				document.getElementsByClassName("pop_img")[j].style.display="none";
 			}
 			document.getElementById("img_background").style.display="none";
 		});
