@@ -308,5 +308,43 @@ position: fixed;
 	ul{
 		margin:0%;
 	}
+		li{
+		padding:.2rem;
+		font-size: 1rem;
+		padding-bottom: 1rem;
+		padding-top: 1rem;
+	}
+	.dropbtn {
+	  font-size: 1rem;
+	}
+	#name{
+		font-size: 1rem;
+		border: solid 2px #3fb0ac;
+		padding:.6rem;
+	}
+	td {
+  		display: table-row;
+	}
+	.intro{
+	  margin:1%;
+	  margin-bottom: 0;
+	  margin-top: 1rem;
+	}
+	.boxes {
+		margin:1%;
+		margin-top:1rem;
+		margin-bottom: 1rem;
+	}
+	.resume table{
+		margin: 1%;
+		margin-top:2rem;
+		margin-bottom: 2rem;
+		width: 100%;
+	}
+	.resume table td p{
+		witdh:100%;
+		padding:0;
+		margin: 0;
+	}
 }
 
