@@ -9,7 +9,7 @@
     "image2": "../images/1080.jpg",
     "image3": "../images/cuda.jpg",
     "image4": "../images/cube.jpg",
-    "thumbnail": "../images/nvidia.png"
+    "thumbnail": "../images/nvidia_thumb.jpg"
   },
   {
     "title": "Farm Connect",
@@ -20,7 +20,7 @@
     "image1": "../images/farm_connect.png",
     "image2": "../images/farm_log.jpg",
     "image3": "../images/farm_map.jpg",
-    "thumbnail": "../images/farm_connect.png"
+    "thumbnail": "../images/farm_connect_thumb.jpg"
   },
   {
     "title": "Process Scheduler",
@@ -29,7 +29,7 @@
     "tech": "C++",
     "description": "Processes Scheduler built to handle First Come First Serve, Round Robin, Preemptive Priority, and Shortest Job First scheduling algorithms.",
     "image1": "../images/scheduler.jpg",
-    "thumbnail": "../images/scheduler.jpg"
+    "thumbnail": "../images/scheduler_thumb.jpg"
   },
   {
     "title": "Pipelined Processor Simulator",
@@ -38,7 +38,7 @@
     "tech": "C",
     "description": "Processes and simulates behavior for a custom instruction set. The processor has a five stage pipeline.",
     "image1": "../images/pipeline.jpg",
-    "thumbnail": "../images/pipeline.jpg"
+    "thumbnail": "../images/pipeline_thumb.jpg"
   },
    {
     "title": "Sign Finder",
@@ -47,7 +47,7 @@
     "tech": "JavaScript, HTML, CSS",
     "description": "Created a tracking application for temporary construction signs using Google Maps API and JavaScript.",
     "image1": "../images/sign_finder.jpg",
-    "thumbnail": "../images/sign_finder.jpg"
+    "thumbnail": "../images/sign_finder_thumb.jpg"
   },
     {
     "title": "Group Chat Server",
@@ -55,7 +55,7 @@
     "type": "Class - Object Oriented Programming",
     "tech": "Java",
     "description": "Implemented a group messaging server that sends encrypted messages to everyone logged in",
-    "image1": "../images/sign_finder.jpg",
-    "thumbnail": "../images/sign_finder.jpg"
+    "image1": "../images/group.jpg",
+    "thumbnail": "../images/group_thumb.jpg"
   }
 ]
