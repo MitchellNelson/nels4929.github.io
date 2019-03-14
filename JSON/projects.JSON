@@ -2,57 +2,60 @@
   {
     "title": "CUDA-WAH",
     "date": "1/2019",
-    "description": "Developed parallel range queries to be run on Nvidia graphics cards.",
-    "image": "../images/nvidia.png",
+    "description": "Developed highly parallel range queries to be run on Nvidia graphics cards. Excecution times were compared to a parallel implementation run on a CPU.",
+    "image1": "../images/nvidia.png",
+    "image2": "../images/1080.jpg",
+    "image3": "../images/cuda.jpg",
+    "image4": "../images/cube.jpg",
     "thumbnail": "../images/nvidia.png"
   },
   {
     "title": "Sign Finder",
     "date": "9/2018",
-    "description": "Created a tracking tool for temporary construction signs using Google Maps API as a foundation",
-    "image": "../images/sign_finder.jpg",
+    "description": "Created a tracking application for temporary construction signs using Google Maps API and JavaScript.",
+    "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"
   },
   {
     "title": "Farm Connect",
     "date": "1/2019",
-    "description": "Created a web application for farmers to check on the progress of crops gorwn by local farmers as well a personal photo tracking system to be used from year to year. Data such as crop height, fertilizer, and seed types can increase statistical inferance on crop growth",
-    "image": "../images/farm_connect.png",
+    "description": "Created a web application for farmers to check on the progress of crops gorwn by local farmers along with data about their crops. The tool can also be used as a personal photo tracking system to monitor growth from year to year.",
+    "image1": "../images/farm_connect.png",
     "thumbnail": "../images/farm_connect.png"
   },
   {
     "title": "Assembler and Simulator",
     "date": "9/2018",
     "description": "Assembler for custom instruction set that parses assembly code into machine code. A simulator was created to simulate the behavior of the corresponding machine code.",
-    "image": "../images/sign_finder.jpg",
+    "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"
   },
     {
     "title": "Group Chat Server",
     "date": "3/2017",
     "description": "Implemented a group messaging server that sends encrypted messages to everyone logged in",
-    "image": "../images/sign_finder.jpg",
+    "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"
   },
   {
     "title": "Sign Finder",
     "date": "9/2018",
     "description": "Created a tracking tool for temporary construction signs using Google Maps API as a foundation",
-    "image": "../images/sign_finder.jpg",
+    "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"
   },
   {
     "title": "Sign Finder",
     "date": "9/2018",
     "description": "Created a tracking tool for temporary construction signs using Google Maps API as a foundation",
-    "image": "../images/sign_finder.jpg",
+    "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"
   },
   {
     "title": "Sign Finder",
     "date": "9/2018",
     "description": "Created a tracking tool for temporary construction signs using Google Maps API as a foundation",
-    "image": "../images/sign_finder.jpg",
+    "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"
   }
 

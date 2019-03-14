@@ -38,7 +38,6 @@ var init = function(){
 	});
 	//document.getElementById("translate").onclick = function() {translate()};
 	initTranslate();
-	
 }
 
 var initTranslate = function(){
@@ -68,7 +67,7 @@ var initTranslate = function(){
 	
 }
 	
-	//recursively go through all content from body 
+//recursively go through all content from body 
 function getAll (lang, element) {
     for (var i = 0; i < element.childNodes.length; i++) {
       var child = element.childNodes[i];
@@ -171,7 +170,6 @@ var education="../JSON/education.JSON";
 
 			var tr = document.createElement("tr");//creates new row
 			
-			
 			var td= document.createElement("td");//creates new column
 			td.appendChild(title_h3);
 			td.appendChild(date_para);
@@ -187,9 +185,7 @@ var education="../JSON/education.JSON";
 
 			tr.appendChild(date_td);
 			tr.appendChild(td);
-			
 			document.getElementById("education_table").appendChild(tr);
-			
 		}
 		initTranslate();
 	});	
@@ -245,11 +241,8 @@ var education="../JSON/education.JSON";
 			tr.appendChild(td);
 			
 			document.getElementById("experience_table").appendChild(tr);
-			
 		}
-		
-	});	
-		
+	});		
 }
 
 var initProjects = function(){
@@ -281,6 +274,7 @@ var initProjects = function(){
 			description_para.appendChild(description_t);
 
 
+
 			if(i%2==0){//makes a new row every other iteration
 				var tr = document.createElement("tr");//creates new row
 			}
@@ -295,42 +289,85 @@ var initProjects = function(){
 			document.getElementById("project_table").appendChild(tr);	
 		}
 
-		//ADD ALL FULL SIZED IMAGES TO A SEPERATE DIV
-		var img_div= document.createElement("div");
-		img_div.id="img_background";
-		//BACKGROUND FUNCTIONALITY FOR CLOSING POP UP
-		img_div.addEventListener( 'click', function(){
-			//LOOP THROUGH ALL POP_IMG AND CHANGE DISPLAY TO NONE
-			for(var j = 0; j<document.getElementsByClassName("pop_img").length; j++){
-				console.log(document.getElementsByClassName("pop_img")[j]);
-				document.getElementsByClassName("pop_img")[j].style.display="none";
+		var left = document.getElementById("left");
+		left.addEventListener('click', function(){
+			console.log("left");
+
+			var all_slideshows = document.getElementsByClassName("pop_img");
+			for(var j = 0; j<all_slideshows.length; j++){
+				if(all_slideshows[j].style.display=="block"){
+					var slideshow_id = all_slideshows[j].className.split(" ");
+					var curr_slideshow = document.getElementsByClassName(slideshow_id[0]);
+				}
 			}
-			document.getElementById("img_background").style.display="none";
+			
+			curr_slideshow[curr_slide ].style.display="none";
+			console.log("length: " + curr_slide);
+			curr_slide =(curr_slide + (curr_slideshow.length-1)) % curr_slideshow.length;
+			console.log("length: " + curr_slide);
+			curr_slideshow[curr_slide ].style.display="block";
+			document.getElementById("slide_num").innerHTML=curr_slide+1 +"/"+curr_slideshow.length;
 		});
 
-		var close = document.createElement("p");
-		//X FUNCTIONALITY
-		close.addEventListener( 'click', function(){
-			//LOOP THROUGH ALL POP_IMG AND CHANGE DISPLAY TO NONE
-			for(var j = 0; j<document.getElementsByClassName("pop_img").length; j++){
-				console.log(document.getElementsByClassName("pop_img")[j]);
-				document.getElementsByClassName("pop_img")[j].style.display="none";
+		var right = document.getElementById("right");
+		right.addEventListener('click', function(){
+			console.log("right");
+
+			var all_slideshows = document.getElementsByClassName("pop_img");
+			for(var j = 0; j<all_slideshows.length; j++){
+				if(all_slideshows[j].style.display=="block"){
+					var slideshow_id = all_slideshows[j].className.split(" ");
+					var curr_slideshow = document.getElementsByClassName(slideshow_id[0]);
+				}
 			}
-			document.getElementById("img_background").style.display="none";
+			console.log("in right: " + slideshow_id + "    " + curr_slideshow[0].src);
+			curr_slideshow[curr_slide].style.display="none";
+			console.log("length: " + curr_slide);
+			curr_slide = (curr_slide+1)%curr_slideshow.length;
+			console.log("length: " + curr_slide);
+			curr_slideshow[curr_slide].style.display="block";
+			document.getElementById("slide_num").innerHTML=curr_slide+1 +"/"+curr_slideshow.length;
 		});
 
-		close.id="close";
-		close_t =document.createTextNode("x");
-		close.appendChild(close_t);
+		var x = document.getElementById("close");
+		x.addEventListener('click', function(){
+			//LOOP THROUGH ALL POP_IMG AND CHANGE DISPLAY TO NONE
+			for(var j = 0; j<document.getElementsByClassName("pop_img").length; j++){
+				document.getElementsByClassName("pop_img")[j].style.display="none";
+			}
+			//LOOP THROUGH ALL POP_DESCRIPTIONS AND CHANGE DISPLAY TO NONE
+			for(var j = 0; j<document.getElementsByClassName("pop_description").length; j++){
+				document.getElementsByClassName("pop_description")[j].style.display="none";
+			}
+			document.getElementById("img_background").style.display="none";
+			curr_slide=0;
+		});
 
-		img_div.appendChild(close);
 		for(var i =0; i<results.length; i++){
-			var image = new Image();
-			image.src = results[i].image;
-			image.id = "img"+i;
-			image.className = "pop_img";
-			img_div.appendChild(image);
-			document.getElementById("project_table").appendChild(img_div);
+			var img_background = document.getElementById("img_background");
+
+			var pop_description = document.createElement("p");
+			var pop_description_t = document.createTextNode(results[i].description);
+			pop_description.className="pop_description";
+			pop_description.id="pop_description"+i;
+			pop_description.style.display="none";
+			pop_description.appendChild(pop_description_t);
+			img_background.appendChild(pop_description);
+			//LOOP OVER ALL "images" IN JSON. Every slideshow can have any number of elements		
+			var image_loop = results[i].hasOwnProperty("image1");
+			var image_num =1;
+			while(image_loop){
+				//DESCRIPTION
+				var image = image = new Image();
+				image.className = "img"+i;
+				image.className += " pop_img";
+				var image_string ="image"+image_num;
+				image.src = results[i][image_string];
+				//var image_t = document.createTextNode(results[i][image_string]);
+				img_background.appendChild(image);
+				image_num++;
+				image_loop = results[i].hasOwnProperty("image"+image_num);
+			}			
 		}
 
 		//loop through thumbnails and add event listeners to each
@@ -345,12 +382,20 @@ var initProjects = function(){
 	initTranslate();
 }
 
+var curr_slide =0;
+
 var showImg=function(index) {
 	var id = "img"+index;
 	console.log(id);
 	document.getElementById("img_background").style.display="block";
-	document.getElementById(id).style.display="block";
+	document.getElementById("pop_description"+index).style.display="block";
+	var curr_slideshow = document.getElementsByClassName(id);
+	curr_slideshow[0].style.display="block";
+	document.getElementById("slide_num").innerHTML=curr_slide+1 +"/"+curr_slideshow.length;
 }
 
+var slide=function(slide_amt){
+	console.log("slide_amt: "+slide_amt);
+}
 
 
