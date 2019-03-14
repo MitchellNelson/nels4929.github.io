@@ -40,6 +40,91 @@ var init = function(){
 	initTranslate();
 }
 
+var request = function(filename){
+	var p = new Promise((resolve,reject)=>{
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function(){
+			if (req.readyState == 4 && req.status == 200){
+				//sucessfully recieved data!
+				var data =JSON.parse(req.response);
+				//console.log(data);
+	   			resolve(data);
+			}
+			else if(req.readyState == 4){
+				reject("Error: " + req.status);
+			}
+		};
+		req.open("GET", filename,true);
+		req.send();
+		console.log(req);
+	});
+	return p;
+}
+
+var translateRequest = function(filename){
+	var p = new Promise((resolve,reject)=>{
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function(){
+			console.log("req.status: " + req.status);
+			if (req.readyState == 4 && req.status == 200){
+				//sucessfully recieved data!
+				var data =JSON.parse(req.response);
+				//console.log(data);
+	   			resolve(data);
+			}
+			else if(req.readyState == 4 &&req.status == 400  && !failed_yandex_request){
+				alert("Error: Invalid request.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 401  && !failed_yandex_request){
+				alert("Error: Authorization data was not specified in the request.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 403  && !failed_yandex_request){
+				alert("Error: Invalid authorization data specified in the request, or access to the requested resource is forbidden.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 404  && !failed_yandex_request){
+				alert("Error: The requested resource was not found.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 405  && !failed_yandex_request){
+				alert("Error: The requested method is not supported for the specified resource.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 415  && !failed_yandex_request){
+				alert("Error: The method does not support the requested content type.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 420  && !failed_yandex_request){
+				alert("Error: Exceeded limits on access to the resource.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 500  && !failed_yandex_request){
+				alert("Error: Internal server error. Try calling the method again later. If the error persists, contact the Yandex.Market support service.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+			else if(req.readyState == 4 &&req.status == 503  && !failed_yandex_request){
+				alert("Error: The server is temporarily unavailable due to high loads. Try calling the method again later.")
+				reject("Error: " + req.status);
+				failed_yandex_request =1;
+			}
+		};
+		req.open("GET", filename,true);
+		req.send();
+		console.log(req);
+	});
+	return p;
+}
+
 var initTranslate = function(){
 	var langs = [['Azerbaijan','az'],['Malayalam',	'ml'],['Albanian',	'sq'],	['Maltese',	'mt'],['Amharic',	'am'],	['Macedonian',	'mk'],['English',	'en'],	['Maori',	'mi'],['Arabic',	'ar'],	['Marathi',	'mr'],
 	['Armenian',	'hy'],	['Mari',	'mhr'],['Afrikaans',	'af'],	['Mongolian',	'mn'],['Basque',	'eu'],	['German',	'de'],['Bashkir',	'ba'],	['Nepali',	'ne'],
@@ -66,7 +151,7 @@ var initTranslate = function(){
 	});
 	
 }
-	
+var failed_yandex_request=0;
 //recursively go through all content from body 
 function getAll (lang, element) {
     for (var i = 0; i < element.childNodes.length; i++) {
@@ -75,7 +160,7 @@ function getAll (lang, element) {
       //if child is at the bottom 
     	if(child.children != undefined && !child.children.length > 0){
 	      	console.log(child.innerHTML);
-	      	if(!child.innerHTML==""){
+	      	if(!child.innerHTML=="" && child.innerHTML!="&gt;" && child.innerHTML!="&lt;"){
 	      		translate_text(lang, child)
 	      	}
     	} 
@@ -99,32 +184,10 @@ var translate_text = function(lang, element){
 	address+="&lang="+lang;
 	address+="&text="+ text;
 
-	var p1 = request(address);
+	var p1 = translateRequest(address);
 	p1.then(results=>{
-		console.log(results);
 		element.innerHTML = results.text[0];
 	});
-}
-
-var request = function(filename){
-	var p = new Promise((resolve,reject)=>{
-		var req = new XMLHttpRequest();
-		req.onreadystatechange = function(){
-			if (req.readyState == 4 && req.status == 200){
-				//sucessfully recieved data!
-				var data =JSON.parse(req.response);
-				//console.log(data);
-	   			resolve(data);
-			}
-			else if(req.readyState == 4){
-				reject("Error: " + req.status);
-			}
-		};
-		req.open("GET", filename,true);
-		req.send();
-		console.log(req);
-	});
-	return p;
 }
 
 var initResume = function(){
