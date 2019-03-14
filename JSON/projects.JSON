@@ -2,7 +2,7 @@
   {
     "title": "Parallel Acceleration of WAH Queries",
     "date": "1/2019",
-    "type": "Research",
+    "type": "Research - Submitting to DEXA 2019",
     "tech": "CUDA, C++",
     "description": "Developed highly parallel range queries to be run on Nvidia graphics cards. Excecution times were compared to a parallel implementation run on a CPU.",
     "image1": "../images/nvidia.png",
@@ -25,7 +25,7 @@
   {
     "title": "Process Scheduler",
     "date": "9/2018",
-    "type": "Operating Systems Class Project",
+    "type": "Class - Operating Systems",
     "tech": "C++",
     "description": "Processes Scheduler built to handle First Come First Serve, Round Robin, Preemptive Priority, and Shortest Job First scheduling algorithms.",
     "image1": "../images/scheduler.jpg",
@@ -34,7 +34,7 @@
   {
     "title": "Pipelined Processor Simulator",
     "date": "9/2018",
-    "type": "Computer Architechure Class Project",
+    "type": "Class - Computer Architechure",
     "tech": "C",
     "description": "Processes and simulates behavior for a custom instruction set. The processor has a five stage pipeline.",
     "image1": "../images/pipeline.jpg",
@@ -52,7 +52,7 @@
     {
     "title": "Group Chat Server",
     "date": "3/2017",
-    "type": "Object Oriented Programming Class Project",
+    "type": "Class - Object Oriented Programming",
     "tech": "Java",
     "description": "Implemented a group messaging server that sends encrypted messages to everyone logged in",
     "image1": "../images/sign_finder.jpg",

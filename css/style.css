@@ -98,9 +98,9 @@ li{
 	font-size: 1.5rem;
 	margin-bottom: .5rem;
 }
-h4{
+/*h4{
 	margin-bottom: .5rem;
-}
+}*/
 
 .boxes table {
   border-collapse: separate;
@@ -127,11 +127,14 @@ h4{
 
 .tech{
 	font-size: .9rem;
+	line-height: .5rem;
+	font-style: italic;
 }
 
 .type{
 	font-size: .9rem;
 	margin-top: 0;
+	line-height: .5rem;
 }
 
 .resume table tr .dates{
