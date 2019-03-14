@@ -2,6 +2,8 @@
   {
     "title": "Parallel Acceleration of WAH Queries",
     "date": "1/2019",
+    "type": "Research",
+    "tech": "CUDA, C++",
     "description": "Developed highly parallel range queries to be run on Nvidia graphics cards. Excecution times were compared to a parallel implementation run on a CPU.",
     "image1": "../images/nvidia.png",
     "image2": "../images/1080.jpg",
@@ -12,6 +14,8 @@
   {
     "title": "Farm Connect",
     "date": "1/2019",
+    "type": "Hackathon - MinneHack 2019",
+    "tech": "JavaScript, HTML, CSS",
     "description": "Created a web application for farmers to check on the progress of crops gorwn by local farmers along with data about their crops. The tool can also be used as a personal photo tracking system to monitor growth from year to year.",
     "image1": "../images/farm_connect.png",
     "image2": "../images/farm_log.jpg",
@@ -21,6 +25,8 @@
   {
     "title": "Process Scheduler",
     "date": "9/2018",
+    "type": "Operating Systems Class Project",
+    "tech": "C++",
     "description": "Processes Scheduler built to handle First Come First Serve, Round Robin, Preemptive Priority, and Shortest Job First scheduling algorithms.",
     "image1": "../images/scheduler.jpg",
     "thumbnail": "../images/scheduler.jpg"
@@ -28,6 +34,8 @@
   {
     "title": "Pipelined Processor Simulator",
     "date": "9/2018",
+    "type": "Computer Architechure Class Project",
+    "tech": "C",
     "description": "Processes and simulates behavior for a custom instruction set. The processor has a five stage pipeline.",
     "image1": "../images/pipeline.jpg",
     "thumbnail": "../images/pipeline.jpg"
@@ -35,6 +43,8 @@
    {
     "title": "Sign Finder",
     "date": "9/2018",
+    "type": "Personal - with Partner",
+    "tech": "JavaScript, HTML, CSS",
     "description": "Created a tracking application for temporary construction signs using Google Maps API and JavaScript.",
     "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"
@@ -42,6 +52,8 @@
     {
     "title": "Group Chat Server",
     "date": "3/2017",
+    "type": "Object Oriented Programming Class Project",
+    "tech": "Java",
     "description": "Implemented a group messaging server that sends encrypted messages to everyone logged in",
     "image1": "../images/sign_finder.jpg",
     "thumbnail": "../images/sign_finder.jpg"

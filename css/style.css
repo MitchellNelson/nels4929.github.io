@@ -96,6 +96,7 @@ li{
 .boxes h3{
 	text-align: center;
 	font-size: 1.5rem;
+	margin-bottom: .5rem;
 }
 
 .boxes table {
@@ -119,6 +120,15 @@ li{
 .dates{
 	float:right;
 	padding: 0;	
+}
+
+.tech{
+	font-size: .9rem;
+}
+
+.type{
+	font-size: .9rem;
+	margin-top: 0;
 }
 
 .resume table tr .dates{
