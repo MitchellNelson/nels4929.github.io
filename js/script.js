@@ -191,10 +191,13 @@ var translate_text = function(lang, element){
 }
 
 var initResume = function(){
-var education="../JSON/education.JSON";
+	var education="../JSON/education.JSON";
+
 	var p1 = request(education);
 	p1.then(results=>{
 		console.log(results);
+
+
 		for(var i =0; i<results.length; i++){
 			//begin date
 			var date_para = document.createElement("p");
@@ -305,7 +308,38 @@ var education="../JSON/education.JSON";
 			
 			document.getElementById("experience_table").appendChild(tr);
 		}
-	});		
+	});
+
+		var skills="../JSON/skills.JSON";
+	var p1 = request(skills);
+	p1.then(results=>{
+		console.log(results);
+
+		for(var i =0; i<results.length; i++){
+			//left
+			var left_para = document.createElement("p");
+			var left_t = document.createTextNode(results[i].left);
+			left_para.appendChild(left_t);
+
+			//content
+			var content_para = document.createElement("p");
+			var content_t = document.createTextNode(results[i].content);
+			content_para.appendChild(content_t);
+
+			var tr = document.createElement("tr");//creates new row
+			var left_td= document.createElement("td");//creates new column
+			var td= document.createElement("td");//creates new column
+
+			left_td.className="dates";
+			left_td.appendChild(left_para);
+			td.appendChild(content_para);
+
+			tr.appendChild(left_td);
+			tr.appendChild(td);
+			
+			document.getElementById("skills_table").appendChild(tr);
+		}
+	});			
 }
 
 var initProjects = function(){
