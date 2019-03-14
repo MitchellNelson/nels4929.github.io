@@ -331,6 +331,12 @@ var initProjects = function(){
 			type_para.className="type";
 			type_para.appendChild(type_t);
 
+			//TECH
+			var tech_para = document.createElement("p");
+			var tech_t = document.createTextNode(results[i].tech);
+			tech_para.className="tech";
+			tech_para.appendChild(tech_t);
+
 			//Thumbnail
 			var thumbnail = new Image();
 			thumbnail.src = results[i].thumbnail;
@@ -342,11 +348,7 @@ var initProjects = function(){
 			description_para.className="description";
 			description_para.appendChild(description_t);
 
-			//TECH
-			var tech_para = document.createElement("p");
-			var tech_t = document.createTextNode(results[i].tech);
-			tech_para.className="tech";
-			tech_para.appendChild(tech_t);
+
 
 
 			if(i%2==0){//makes a new row every other iteration
@@ -357,8 +359,9 @@ var initProjects = function(){
 			td.appendChild(date_para);
 			td.appendChild(title_h3);
 			td.appendChild(type_para);
-			td.appendChild(thumbnail);
 			td.appendChild(tech_para);
+			td.appendChild(thumbnail);
+			
 			td.appendChild(description_para);
 
 			tr.appendChild(td);
