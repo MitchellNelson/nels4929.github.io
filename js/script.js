@@ -147,7 +147,7 @@ var initTranslate = function(){
   		btn.addEventListener('click', function() {
 			getAll(element[1], document.body);
 		});
-  		document.getElementsByClassName("dropdown-content")[0].appendChild(btn);
+  		document.getElementsByClassName("menu-content")[0].appendChild(btn);
 	});
 	
 }
@@ -269,15 +269,29 @@ var initResume = function(){
 			var edate_t = document.createTextNode(results[i].date_end);
 			edate_para.appendChild(edate_t);
 
+			var span_para = document.createElement("span");
+
 			//TITLE
 			var title_h3 = document.createElement("h4");
-			var title_t = document.createTextNode(results[i].title);
+			var title_t = document.createTextNode(results[i].title+ " - ");
+			title_h3.style.display="inline";
 			title_h3.appendChild(title_t);
+
+			span_para.appendChild(title_h3);
+
+			//location
+			var location_a = document.createElement("a");
+			var location_t = document.createTextNode(results[i].location);
+			location_a.href = results[i].link;
+			location_a.target="_blank";
+			location_a.appendChild(location_t);
+
+			span_para.appendChild(location_a);
 
 			var tr = document.createElement("tr");//creates new row
 			
 			var td= document.createElement("td");//creates new column
-			td.appendChild(title_h3);
+			td.appendChild(span_para);
 			td.appendChild(date_para);
 			td.appendChild(edate_para);
 			
@@ -454,7 +468,7 @@ var initProjects = function(){
 		});
 
 		for(var i =0; i<results.length; i++){
-			var img_background = document.getElementById("img_background");
+			var pop_text = document.getElementById("pop_text");
 
 
 			var pop_title = document.createElement("h4");
@@ -463,7 +477,7 @@ var initProjects = function(){
 			pop_title.id="pop_title"+i;
 			pop_title.style.display="none";
 			pop_title.appendChild(pop_title_t);
-			img_background.appendChild(pop_title);
+			pop_text.appendChild(pop_title);
 
 			var pop_description = document.createElement("p");
 			var pop_description_t = document.createTextNode(results[i].description);
@@ -471,7 +485,7 @@ var initProjects = function(){
 			pop_description.id="pop_description"+i;
 			pop_description.style.display="none";
 			pop_description.appendChild(pop_description_t);
-			img_background.appendChild(pop_description);
+			pop_text.appendChild(pop_description);
 			//LOOP OVER ALL "images" IN JSON. Every slideshow can have any number of elements		
 			var image_loop = results[i].hasOwnProperty("image1");
 			var image_num =1;

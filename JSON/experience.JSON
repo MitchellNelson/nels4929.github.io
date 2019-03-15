@@ -2,6 +2,7 @@
   {
     "title": "Research Assistant",
     "location": "University of St. Thomas",
+    "link": "https://www.stthomas.edu",
     "date_begin": "9/2018",
     "date_end": "To Present",
     "item1": "Program parallel code to optimize Nvidia graphics card performance for bit-map compression algorithms",
@@ -10,6 +11,7 @@
   {
     "title": "Teaching Assistant",
     "location": "University of St. Thomas",
+    "link": "https://www.stthomas.edu",
     "date_begin": "9/2018",
     "date_end": "To Present",
     "item1": "Evaluate and grade projects coded by students taking an introductory programming course",
@@ -19,6 +21,7 @@
   {
     "title": "Web Development Intern",
     "location": "University of St. Thomas",
+    "link": "https://www.stthomas.edu",
     "date_begin": "8/2018",
     "date_end": "To Present",
     "item1": "Developed a responsive homepage geared for student productivity that is now the default homepage for all students using on-campus computers (~8,000 visits per day)",

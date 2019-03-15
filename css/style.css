@@ -170,6 +170,11 @@ li{
 	witdh:100%;
 }
 
+.resume_titles{
+	text-align: center;
+	font-size: 1.5rem;
+}
+
 .resume table td p{
 	margin-right: 2rem;
 	witdh:100%;
@@ -178,14 +183,14 @@ li{
 }
 
 .resume a:link{
-	text-decoration: none;
+	
 	color:#3b3d42;;
 }
 .resume a:visited{
 	color:#3b3d42;;
 }
 
-.dropbtn {
+.menu_drop {
   background-color:#44484f;
   color: white;
   border: none;
@@ -194,12 +199,12 @@ li{
   font-family: Gotham SSm A,Gotham SSm B,Gotham Rounded SSm A,Gotham Rounded SSm B,sans-serif;
 }
 
-.dropdown {
+.menu {
   position: relative;
   display: block;
 }
 
-.dropdown-content {
+.menu-content {
   position: absolute;
   display: none;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -208,7 +213,7 @@ li{
 
 }
 
-.dropdown-content button {
+.menu-content button {
   color: black;
   padding: 10px 10px;
   text-decoration: none;
@@ -216,14 +221,14 @@ li{
   
 }
 
-.dropdown-content button:hover {
+.menu-content button:hover {
   color: #3b3d42;
   border-radius: 0px;
   border: solid 1px #173e43;
   padding: 9px 9px;
 }
 
-.dropdown:hover .dropdown-content {
+.menu:hover .menu-content {
   display: block;
 }
 
@@ -258,7 +263,7 @@ max-height: 60%;
     top: 50%;
     transform: translate(-50%,-50%);
   background-color: white;
-  z-index: 3;
+  z-index: 0;
   padding: 0;
 }
 
@@ -269,7 +274,7 @@ max-height: 60%;
 
 #close {
   position: absolute;
-  right: 5%;
+  right: 1%;
   top: 1rem;
   border: none;
   color:white;
@@ -280,30 +285,32 @@ max-height: 60%;
 #right:hover {
   color: #fae596;
   cursor: pointer;
+  background-color: #44484f;
 }
 
 #right {
   position: absolute;
-  right: 5%;
-  top: 20%;
+  right: 1%;
+  top: 40vh;
   border: none;
   color:white;
   background-color: transparent;
-  font-size: 3em;
+  font-size: 4em;
 }
 #left:hover {
   color: #fae596;
   cursor: pointer;
+  background-color: #44484f;
 }
 
 #left {
   position: absolute;
-  left: 5%;
-  top: 20%;
+  left: 1%;
+  top: 40vh;
   border: none;
   color:white;
   background-color: transparent;
-  font-size: 3em;
+  font-size: 4em;
 }
 
 
@@ -325,14 +332,14 @@ max-height: 60%;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-  
+ 
   padding: 0;
   border: none;
   color:white;
   background-color: transparent;
   font-size: 1em;
 }
-.pop_description{
+/*.pop_description{
 	position: absolute;
   left: 50%;
   margin: 0px 5% 0px 5%
@@ -342,23 +349,41 @@ max-height: 60%;
   padding: 0;
   border: none;
   color:white;
-  background-color: transparent;
+  
   font-size: 1em;
+  max-width: 60%;
+}*/
+
+#pop_text{
+		position: absolute;
+  left: 50%;
+  margin: 0px 5% 0px 5%
+  right:50%;
+  transform: translate(-50%,-50%);
+  bottom: 20%;
+  padding: 0;
+  border: none;
+  color:white;
+  z-index: 10000;
+  font-size: 1em;
+	 background-color: rgba(68,72,79,.95);
+
 }
 
-.pop_title{
+/*.pop_title{
 	position: absolute;
   left: 50%;
   margin: 0px 5% 0px 5%
   right:50%;
   transform: translate(-50%,-50%);
-  bottom: 22%;
+  bottom: 30%;
   padding: 0;
   border: none;
   color:white;
-  background-color: transparent;
+  z-index: 10000;
+  
   font-size: 1em;
-}
+}*/
 
 .myFooter {
   left: 0;
@@ -383,24 +408,27 @@ max-height: 60%;
 @media only screen and (max-width: 900px){
 	li{
 		padding:.2rem;
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		padding-bottom: 1rem;
 		padding-top: 1rem;
 	}
-	.dropbtn {
-		font-size: 1.2rem;
+	.menu_drop {
+		font-size: 1.1rem;
 	}
 	#name{
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		border-left: solid 2px #3fb0ac;
-		padding:.6rem;
+		padding:.5rem;
 	}
-	td {
+	.boxes td {
   		display: table-row;
 	}
 	.boxes table {
   	
-  	border-spacing: 1rem 0rem;
+  		border-spacing: 1rem 0rem;
+	}
+	.resume table tr .dates{
+	width: 7rem;
 	}
 	.intro{
 	  margin:5%;
@@ -412,16 +440,21 @@ max-height: 60%;
 		margin-top:1rem;
 		margin-bottom: 1rem;
 	}
-	.resume table{
-		margin: 5%;
+	.resume{
+		margin: 1%;
 		margin-top:2rem;
 		margin-bottom: 2rem;
-		width: 90%;
+		width: 98%;
 	}
 	.resume table td p{
 		witdh:100%;
 		padding:0;
 		margin: 0;
+	}
+	#pop_text{
+
+  		bottom: 0%;
+
 	}
 
 }
@@ -432,10 +465,10 @@ max-height: 60%;
 		margin:0%;
 	}
 	li{
-		font-size:.8rem;
+		font-size:.7rem;
 	}
-		.dropbtn {
-		font-size: .8rem;
+		.menu_drop {
+		font-size: .7rem;
 	}
 
 }
