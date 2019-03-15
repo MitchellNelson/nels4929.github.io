@@ -220,7 +220,6 @@ var initResume = function(){
 			title_h3.appendChild(title_a);
 			title_a.appendChild(title_t);
 
-
 			//DESCRIPTION
 			var gpa_para = document.createElement("p");
 			var gpa_t = document.createTextNode(results[i].gpa);
@@ -310,7 +309,7 @@ var initResume = function(){
 		}
 	});
 
-		var skills="../JSON/skills.JSON";
+	var skills="../JSON/skills.JSON";
 	var p1 = request(skills);
 	p1.then(results=>{
 		console.log(results);
@@ -382,9 +381,6 @@ var initProjects = function(){
 			description_para.className="description";
 			description_para.appendChild(description_t);
 
-
-
-
 			if(i%2==0){//makes a new row every other iteration
 				var tr = document.createElement("tr");//creates new row
 			}
@@ -448,8 +444,9 @@ var initProjects = function(){
 			for(var j = 0; j<document.getElementsByClassName("pop_img").length; j++){
 				document.getElementsByClassName("pop_img")[j].style.display="none";
 			}
-			//LOOP THROUGH ALL POP_DESCRIPTIONS AND CHANGE DISPLAY TO NONE
+			//LOOP THROUGH ALL POP_DESCRIPTIONS AND TITLE - CHANGE DISPLAY TO NONE
 			for(var j = 0; j<document.getElementsByClassName("pop_description").length; j++){
+				document.getElementsByClassName("pop_title")[j].style.display="none";
 				document.getElementsByClassName("pop_description")[j].style.display="none";
 			}
 			document.getElementById("img_background").style.display="none";
@@ -458,6 +455,15 @@ var initProjects = function(){
 
 		for(var i =0; i<results.length; i++){
 			var img_background = document.getElementById("img_background");
+
+
+			var pop_title = document.createElement("h4");
+			var pop_title_t = document.createTextNode(results[i].title);
+			pop_title.className="pop_title";
+			pop_title.id="pop_title"+i;
+			pop_title.style.display="none";
+			pop_title.appendChild(pop_title_t);
+			img_background.appendChild(pop_title);
 
 			var pop_description = document.createElement("p");
 			var pop_description_t = document.createTextNode(results[i].description);
@@ -501,6 +507,7 @@ var showImg=function(index) {
 	var id = "img"+index;
 	console.log(id);
 	document.getElementById("img_background").style.display="block";
+	document.getElementById("pop_title"+index).style.display="block";
 	document.getElementById("pop_description"+index).style.display="block";
 	var curr_slideshow = document.getElementsByClassName(id);
 	curr_slideshow[0].style.display="block";

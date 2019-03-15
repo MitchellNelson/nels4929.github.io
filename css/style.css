@@ -338,7 +338,21 @@ max-height: 60%;
   margin: 0px 5% 0px 5%
   right:50%;
   transform: translate(-50%,-50%);
-  bottom: 15%;
+  bottom: 11%;
+  padding: 0;
+  border: none;
+  color:white;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.pop_title{
+	position: absolute;
+  left: 50%;
+  margin: 0px 5% 0px 5%
+  right:50%;
+  transform: translate(-50%,-50%);
+  bottom: 22%;
   padding: 0;
   border: none;
   color:white;
