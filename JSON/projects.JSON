@@ -6,10 +6,16 @@
     "tech": "CUDA, C++",
     "description": "Developed highly parallel range queries to be run on Nvidia graphics cards. Excecution times were compared to a parallel implementation run on a CPU.",
     "image1": "../images/nvidia.png",
-    "image2": "../images/1080.jpg",
-    "image3": "../images/cuda.jpg",
-    "image4": "../images/cube.jpg",
     "thumbnail": "../images/nvidia_thumb.jpg"
+  },
+  {
+    "title": "Cryptocurrency Wallet",
+    "date": "5/2019",
+    "type": "Class - Advanced Information Security",
+    "tech": "Python",
+    "description": "Implemented a wallet application for a cryptocurrency called 'Tommie-Coin', based off of ScroogeCoin. Provided users with a texted-based interface for updating the blockchain to easily create both pay and mine transactions.",
+    "image3": "../images/crypto.jpg",
+    "thumbnail": "../images/crypto.jpg"
   },
   {
     "title": "Air Quality Map",
