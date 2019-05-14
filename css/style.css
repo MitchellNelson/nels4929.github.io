@@ -121,16 +121,20 @@ li{
 	float:right;
 	padding: 0;	
 }
-
+.link{
+  text-decoration: none;
+  margin-top: 0;
+  line-height: .5rem;
+}
 .tech{
 	font-size: .9rem;
 	line-height: .5rem;
 	font-style: italic;
+
 }
 
 .type{
 	font-size: .9rem;
-	margin-top: 0;
 	line-height: .5rem;
 }
 

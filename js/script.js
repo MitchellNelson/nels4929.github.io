@@ -84,6 +84,17 @@ var initProjects = function(){
 			tech_para.className="tech";
 			tech_para.appendChild(tech_t);
 
+			//LINK
+			var link_para = document.createElement("a");
+			if(results[i].hasOwnProperty("link_src")){
+				link_para.href = results[i].link_src;
+				link_para.target = "_blank";
+				var link_t = document.createTextNode(results[i].link_title);
+				link_para.className="type link";
+				link_para.appendChild(link_t);
+			}
+
+
 			//Thumbnail
 			var thumbnail = new Image();
 			thumbnail.src = results[i].thumbnail;
@@ -102,6 +113,7 @@ var initProjects = function(){
 			var td= document.createElement("td");//creates new column
 			td.appendChild(date_para);
 			td.appendChild(title_h3);
+			td.appendChild(link_para);
 			td.appendChild(type_para);
 			td.appendChild(tech_para);
 			td.appendChild(thumbnail);
