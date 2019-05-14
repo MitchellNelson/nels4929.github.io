@@ -12,6 +12,17 @@
     "thumbnail": "../images/nvidia_thumb.jpg"
   },
   {
+    "title": "Air Quality Map",
+    "date": "4/2019",
+    "type": "Class - Web Development",
+    "tech": "JavaScript, Vue JS, HTML, CSS",
+    "description": "Created a web appliction that visualizes the air polution for any given location. Users have the ability to filter air particles, apply a heat map visualization, and search by city name. Air polution data is pulled from OpenAQ API from the last 30 days.",
+    "image1": "../images/air1.jpg",
+    "image2": "../images/air2.jpg",
+    "image3": "../images/air3.jpg",
+    "thumbnail": "../images/air3.jpg"
+  },
+  {
     "title": "Farm Connect",
     "date": "1/2019",
     "type": "Hackathon - MinneHack 2019",
