@@ -16,7 +16,7 @@
     "date": "4/2019",
     "type": "Class - Web Development",
     "tech": "JavaScript, Vue JS, HTML, CSS",
-    "description": "Created a web appliction that visualizes the air polution for any given location. Users have the ability to filter air particles, apply a heat map visualization, and search by city name. Air polution data is pulled from OpenAQ API from the last 30 days.",
+    "description": "Created a web appliction that visualizes the air pollution for any given location. Users have the ability to filter air particles, apply a heat map visualization, and search by city name. Air pollution data is pulled from OpenAQ API from the last 30 days.",
     "image1": "../images/air1.jpg",
     "image2": "../images/air2.jpg",
     "image3": "../images/air3.jpg",
