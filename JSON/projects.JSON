@@ -5,6 +5,7 @@
     "type": "Personal",
     "tech": "JavaScript, Node.js, WebSocket, HTML, CSS, Vue.js",
     "link_src": "https://github.com/nels4929/drum-machine",
+    "link_title": "View on GitHub",
     "description": "Interactive web application that gives multiple users the power to create a collaborative drum beat in real time. Syncs user interactions, such as play/pause, rhythm changes, and new sounds across users in a session.",
     "image1": "../images/drum_machine.jpg",
     "thumbnail": "../images/drum_machine_thumb.jpg"
