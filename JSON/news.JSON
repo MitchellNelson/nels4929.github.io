@@ -1,5 +1,10 @@
 [
   {
+    "title": "Internship Completed",
+    "date": "August 16, 2019",
+    "content": "I have completed a three-month internship at Leidos, working on their Civil team that delivers air traffic control software to the FAA. I learned a lot of knowledge and experience participating in code reviews, working in complex code bases, and commutating with remote workers."
+  },
+  {
     "title": "DEXA 2019 Submission",
     "date": "March 12, 2019",
     "content": "I have been working with a team of professors and a fellow student to prepare a research paper for submission at DEXA, a database conference being held in Linz, Austria. My role in the project has largely been revolved around the development of our CUDA and C++ source code."
