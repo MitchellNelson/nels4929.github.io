@@ -1,5 +1,16 @@
 [
   {
+    "title": "Computer Vision Drum Simulator",
+    "date": "8/2019",
+    "type": "Personal",
+    "tech": "Python, OpenCV, NumPy",
+    "link_src": "https://github.com/nels4929/drumCV",
+    "link_title": "View on GitHub",
+    "description": "Computer vision drum simulator that produces drum sounds while a user is 'air drumming' with two colored drum sticks in front of a webcam.",
+    "image1": "../images/drumCV.jpg",
+    "thumbnail": "../images/drumCV.jpg"
+  },
+  {
     "title": "Collaborative Music Creator",
     "date": "6/2019",
     "type": "Personal",
